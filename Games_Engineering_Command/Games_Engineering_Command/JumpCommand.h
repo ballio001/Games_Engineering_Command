@@ -11,6 +11,6 @@ public:
 	virtual void execute() { jump(); }
 
 	void jump() {
-		cout << "jumping" << endl;
+		cout << "Jumping!" << endl;
 	}
 };

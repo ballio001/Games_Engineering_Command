@@ -12,6 +12,6 @@ public:
 	virtual void execute() { fireGun(); }
 
 	void fireGun() {
-		cout << "firing gun" << endl;
+		cout << "Firing my Gun!" << endl;
 	}
 };

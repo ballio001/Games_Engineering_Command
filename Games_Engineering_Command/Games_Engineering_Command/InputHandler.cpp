@@ -9,7 +9,7 @@ void InputHandler::handleInput()
 {
 	if (GetKeyState('A')) 
 		buttonA_->execute();
-	else if (GetKeyState('A'))
+	else if (GetKeyState('Y'))
 		buttonY_->execute();
 	else if (GetKeyState('X'))
 		buttonX_->execute();
