@@ -15,6 +15,8 @@ void InputHandler::handleInput()
 		buttonX_->execute();
 	else if (GetKeyState('Z'))
 		buttonZ_->execute();
+	else if (GetKeyState('D'))
+		buttonD_->execute();
 }
 
 InputHandler::InputHandler()

@@ -16,5 +16,6 @@ private:
 	Command* buttonY_;
 	Command* buttonX_;
 	Command* buttonZ_;
+	Command* buttonD_;
 };
 
