@@ -6,9 +6,6 @@ class InputHandler
 public:
 	void handleInput();
 
-	// Methods to bind commands...
-
-
 	InputHandler();
 	~InputHandler();
 private:

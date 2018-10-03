@@ -7,16 +7,18 @@
 using namespace std; 
 
 void MacroCommand::execute() {
-	list<Command*>::iterator i(commands);
-	for (i.First(); !i.IsDone();i.Next())
+	typedef list<Command> commandsList;
+
+	for (auto it = commands->begin(); it != commands->end(); ++it)
 	{
-		Command *c = i.CurrentItem();
-		c->execute();
+		Command* com = *it;
+		com->execute();
 	}
 }
 
 void MacroCommand::add(Command *c) {
-	commands->append(c);
+	auto it = commands->end();
+	commands->insert(it, c);
 }
 
 void MacroCommand::remove(Command *c) {
