@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Command.h" />
     <ClInclude Include="Crouch.h" />
+    <ClInclude Include="Empty.h" />
     <ClInclude Include="FireCommand.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="JumpCommand.h" />
@@ -159,7 +160,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Games_Engineering_Command.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="MacroCommand.cpp" />
     <ClCompile Include="stdafx.cpp">

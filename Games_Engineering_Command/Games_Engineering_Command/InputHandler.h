@@ -9,10 +9,11 @@ public:
 	InputHandler();
 	~InputHandler();
 private:
-	Command* buttonA_;
-	Command* buttonY_;
-	Command* buttonX_;
-	Command* buttonZ_;
-	Command* buttonD_;
+	//Command* buttonA_;
+	//Command* buttonS_;
+	//Command* buttonX_;
+	//Command* buttonZ_;
+	//Command* buttonD_;
+	//Command* buttonU_;
 };
 

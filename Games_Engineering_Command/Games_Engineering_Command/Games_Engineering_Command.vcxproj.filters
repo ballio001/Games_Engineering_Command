@@ -48,18 +48,21 @@
     <ClInclude Include="MacroCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Empty.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Games_Engineering_Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MacroCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

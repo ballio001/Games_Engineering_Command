@@ -3,8 +3,8 @@ class Command
 {
 public:
 	virtual ~Command() {}
-	virtual void execute() = 0;
-	//virtual void undo() = 0;
+	virtual void Execute() = 0;
+	//virtual void Undo() = 0;
 protected:
 	Command() {}
 };

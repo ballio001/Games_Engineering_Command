@@ -7,9 +7,14 @@ using namespace std;
 class Melee : public Command
 {
 public:
-	virtual void execute() { melee(); }
+	virtual void Execute() { melee(); }
+	virtual void Undo() { undoMelee(); }
 
 	void melee() {
 		cout << "Fighting!" << endl;
+	}
+
+	void undoMelee() {
+		cout << "undo Fighting!" << endl;
 	}
 };

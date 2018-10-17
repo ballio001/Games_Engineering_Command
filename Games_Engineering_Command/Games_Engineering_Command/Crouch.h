@@ -7,9 +7,14 @@ using namespace std;
 class Crouch : public Command
 {
 public:
-	virtual void execute() { crouch(); }
+	virtual void Execute() { crouch(); }
+	virtual void Undo() { undoCrouch(); }
 
 	void crouch() {
 		cout << "Crouching!" << endl;
+	}
+
+	void undoCrouch() {
+		cout << "Undo Crouching!" << endl;
 	}
 };

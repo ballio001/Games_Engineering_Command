@@ -10,7 +10,10 @@ public:
 	virtual ~MacroCommand();
 	virtual void add(Command*);
 	virtual void remove(Command*);
-	virtual void execute();
+	virtual void Execute();
+	virtual void Undo();
+	virtual void Redo();
+
 private:
 	std::list<Command*>* commands;
 };
