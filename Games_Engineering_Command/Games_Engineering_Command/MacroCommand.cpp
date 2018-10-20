@@ -1,51 +1,62 @@
+
 #include "stdafx.h"
 #include "MacroCommand.h"
-#include "Command.h"
-#include "Empty.h"
-#include <iterator>
-#include <list>
-
-using namespace std; 
-
-void MacroCommand::Execute() {
-	typedef list<Command> commandsList;
-
-	for (auto it = commands->begin(); it != commands->end(); ++it)
-	{
-		Command* com = *it;
-		com->Execute();
-	}
-}
-
-void MacroCommand::add(Command *c) {
-	auto it = commands->end();
-	commands->insert(it, c);
-}
-
-void MacroCommand::remove(Command *c) {
-	commands->remove(c);
-}
-
-void MacroCommand::Redo() {
-	if (commands->size() > 1) {
-		commands->back()->Execute();
-	}
-}
-
-void MacroCommand::Undo() {
-	if (commands->size() > 1) {
-		commands->back()->Execute();
-		commands->pop_back();
-	}
-}
 
 MacroCommand::MacroCommand()
 {
-	Command* emptyCommand = new Empty;
-	commands = new list<Command*>{ emptyCommand };
-}
 
+}
 
 MacroCommand::~MacroCommand()
 {
+	std::cout << "deconstructing" << std::endl;
+}
+
+void MacroCommand::add(Command* command)
+{
+	commands.push_back(command);
+}
+
+void MacroCommand::remove(Command* command)
+{
+	commands.remove(command);
+}
+
+void MacroCommand::undo()
+{
+
+	if (commands.size() > 0) {
+		(*commands.rbegin())->undo();
+		redoCommands.push_back(*commands.rbegin());
+		commands.pop_back();
+	}
+	else
+	{
+		std::cout << "Empty List" << std::endl;
+	}
+}
+
+void MacroCommand::redo()
+{
+	if (redoCommands.size() > 0) {
+
+		(*redoCommands.rbegin())->redo();
+		commands.push_back(*redoCommands.rbegin());
+		redoCommands.pop_back();
+	}
+	else {
+		std::cout << "Empty List" << std::endl;
+	}
+}
+
+void MacroCommand::execute()
+{
+	std::list<Command*>::iterator iter;
+
+	for (iter = commands.begin(); iter != commands.end(); ++iter)
+	{
+		(*iter)->execute();
+	}
+
+	std::cout << "executed" << std::endl;
 }

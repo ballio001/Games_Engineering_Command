@@ -1,20 +1,24 @@
 #pragma once
+
 #include "Command.h"
 #include <iostream>
 
 using namespace std;
-
 class Shield : public Command
 {
 public:
-	virtual void Execute() { shield(); }
-	virtual void Undo() { undoShield(); }
+	virtual void execute() { shield(); }
 
 	void shield() {
 		cout << "Shields Up!" << endl;
 	}
-
-	void undoShield() {
-		cout << "Shields Deactivated!" << endl;
-	}
+	
+	virtual void undo()
+	{
+		std::cout << "Shield Deactivated!" << std::endl;
+	};
+	virtual void redo()
+	{
+		std::cout << "Shield Reactivated!" << std::endl;
+	};
 };

@@ -4,18 +4,21 @@
 #include <iostream>
 
 using namespace std;
-
 class FireCommand : public Command
 {
 public:
-	virtual void Execute() { fireGun(); }
-	virtual void Undo() { undoFireGun(); }
-
+	virtual void execute() { fireGun(); }
+	
 	void fireGun() {
 		cout << "Firing my Gun!" << endl;
 	}
-
-	void undoFireGun() {
-		cout << "undo Firing my Gun!" << endl;
-	}
+	
+	virtual void undo()
+	{
+		cout << "Undo Fire" << endl;
+	};
+	virtual void redo()
+	{
+		cout << "Redo Fire" << endl;
+	};
 };

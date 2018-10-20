@@ -1,20 +1,24 @@
 #pragma once
+
 #include "Command.h"
 #include <iostream>
 
 using namespace std;
-
 class Melee : public Command
 {
 public:
-	virtual void Execute() { melee(); }
-	virtual void Undo() { undoMelee(); }
-
+	virtual void execute() { melee(); }
+	
 	void melee() {
 		cout << "Fighting!" << endl;
 	}
-
-	void undoMelee() {
-		cout << "undo Fighting!" << endl;
-	}
+	
+	virtual void undo()
+	{
+		cout << "Undo Mellee" << endl;
+	};
+	virtual void redo()
+	{
+		cout << "Redo Mellee" << endl;
+	};
 };
