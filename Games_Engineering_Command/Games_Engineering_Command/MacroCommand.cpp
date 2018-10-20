@@ -9,7 +9,7 @@ MacroCommand::MacroCommand()
 
 MacroCommand::~MacroCommand()
 {
-	std::cout << "deconstructing" << std::endl;
+	std::cout << "dtor" << std::endl;
 }
 
 void MacroCommand::add(Command* command)
@@ -26,9 +26,9 @@ void MacroCommand::undo()
 {
 
 	if (commands.size() > 0) {
-		(*commands.rbegin())->undo();
-		redoCommands.push_back(*commands.rbegin());
-		commands.pop_back();
+		(*commands.rbegin())->undo(); //reverse begin
+		redoCommands.push_back(*commands.rbegin()); //puts last item first
+		commands.pop_back(); //removes last list item
 	}
 	else
 	{
@@ -41,8 +41,8 @@ void MacroCommand::redo()
 	if (redoCommands.size() > 0) {
 
 		(*redoCommands.rbegin())->redo();
-		commands.push_back(*redoCommands.rbegin());
-		redoCommands.pop_back();
+		commands.push_back(*redoCommands.rbegin()); //puts last item first
+		redoCommands.pop_back(); //removes last list item
 	}
 	else {
 		std::cout << "Empty List" << std::endl;
@@ -56,7 +56,7 @@ void MacroCommand::execute()
 	for (iter = commands.begin(); iter != commands.end(); ++iter)
 	{
 		(*iter)->execute();
-	}
+	}//execute aslong as the iterator isn't the last command in the commands list
 
-	std::cout << "executed" << std::endl;
+	std::cout << "Execution complete..." << std::endl;
 }

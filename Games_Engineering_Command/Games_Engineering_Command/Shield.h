@@ -15,10 +15,10 @@ public:
 	
 	virtual void undo()
 	{
-		std::cout << "Shield Deactivated!" << std::endl;
+		std::cout << "Undo Shield" << std::endl;
 	};
 	virtual void redo()
 	{
-		std::cout << "Shield Reactivated!" << std::endl;
+		std::cout << "Redo Shield" << std::endl;
 	};
 };

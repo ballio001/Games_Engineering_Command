@@ -15,10 +15,10 @@ public:
 	
 	virtual void undo()
 	{
-		cout << "Undo Fire" << endl;
+		cout << "Undo Firing Gun!" << endl;
 	};
 	virtual void redo()
 	{
-		cout << "Redo Fire" << endl;
+		cout << "Redo Firing Gun!" << endl;
 	};
 };

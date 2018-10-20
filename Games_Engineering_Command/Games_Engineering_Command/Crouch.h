@@ -15,10 +15,10 @@ public:
 
 	virtual void undo()
 	{
-		cout << "Undo Crouch" << endl;
+		cout << "Undo Crouching" << endl;
 	};
 	virtual void redo()
 	{
-		cout << "Redo Crouch" << endl;
+		cout << "Redo Crouching" << endl;
 	};
 };
